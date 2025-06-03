@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Zone - Aprende Programación Interactiva</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    /* ESTILOS EXISTENTES (RESUMIDOS EN TU CÓDIGO) */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      background: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      background: linear-gradient(to right, #141e30, #243b55);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 25px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+   
+    /*estilos del las cards*/
+    .btn.primary {
+      background: #00ffe1;
+      color: black;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn.primary:hover {
+      background: #00ccb3;
+    }
+
+    .seccion {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: #00ffe1;
+    }
+
+    .lenguajes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      text-align: center;
+      padding: 20px;
+      background: #121212;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 225, 0.1);
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(0, 255, 225, 0.3);
+      background-color: #1f1f1f;
+    }
+
+    .card-icon {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #00ffe1;
+      margin-bottom: 6px;
+    }
+
+    .card-desc {
+      font-size: 0.95em;
+      opacity: 0.85;
+    }
+
+    .interaccion {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      transition: transform 0.3s;
+    }
+
+    .interaccion:hover {
+      transform: translateY(-5px);
+    }
+
+      .card-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #16213e;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-icon {
+      transform: scale(1.2) rotate(8deg);
+    }
+    /*fin*/
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      font-size: 14px;
+      color: #888;
+    }
+
+    .footer a {
+      color: #00ffe1;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    /*espacio de pie de pagina con el de tips*/
+    #tips {
+  margin-bottom: 60px; /* Espacio entre Tips y el footer */
+}
+
+.footer {
+  margin-top: 40px; /* Espacio adicional opcional arriba del footer */
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <h1 class="logo">🌐 Code Zone</h1>
+    <nav class="nav" id="navMenu">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">🏠 Inicio</a></li>
+        <li><a href="1.html">📘 Niveles</a></li>
+        <li><a href="#tips">💡 Tips</a></li>
+        <li><a href="#lenguajes">👨‍💻 Lenguajes</a></li>
+        <li><a href="#contacto">✉️ Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="btn primary">🔐 Iniciar sesión</button>
+  </header>
+
+  
+
+     
+
+      <!-- LENGUAJES DE PROGRAMACIÓN -->
+     <section class="seccion" id="lenguajes">
+  <h1 class="title" style="text-align:center; margin-bottom: 30px; color:#00ffe1;">Lenguajes de Programación</h1>
+
+  <div class="lenguajes-grid">
+    <div class="card python interaccion" onclick="alert('Has seleccionado Python! Próximamente niveles.')">
+      <div class="card-icon">🐍</div>
+      <div class="card-title">Python</div>
+      <div class="card-desc">Lenguaje popular para ciencia de datos, web y automatización.</div>
+    </div>
+
+    <div class="card javascript interaccion" onclick="alert('Has seleccionado JavaScript! Próximamente niveles.')">
+      <div class="card-icon">✨</div>
+      <div class="card-title">JavaScript</div>
+      <div class="card-desc">El rey del desarrollo web, para hacer sitios interactivos.</div>
+    </div>
+
+    <div class="card html interaccion" onclick="alert('Has seleccionado HTML! Próximamente niveles.')">
+      <div class="card-icon">📄</div>
+      <div class="card-title">HTML</div>
+      <div class="card-desc">La estructura base de cualquier página web.</div>
+    </div>
+
+    <div class="card css interaccion" onclick="alert('Has seleccionado CSS! Próximamente niveles.')">
+      <div class="card-icon">🎨</div>
+      <div class="card-title">CSS</div>
+      <div class="card-desc">El lenguaje para darle estilo y diseño a los sitios web.</div>
+    </div>
+
+    <div class="card java interaccion" onclick="alert('Has seleccionado Java! Próximamente niveles.')">
+      <div class="card-icon">☕</div>
+      <div class="card-title">Java</div>
+      <div class="card-desc">Lenguaje robusto para aplicaciones móviles y empresariales.</div>
+    </div>
+
+    <!-- C++ CARD corregida -->
+    <div class="card cpp interaccion" onclick="alert('Has seleccionado C++! Próximamente niveles.')">
+      <div class="card-icon">➕</div>
+      <div class="card-title">C++</div>
+      <div class="card-desc">Lenguaje de programación potente y versátil, ideal para sistemas de alto rendimiento.</div>
+    </div>
+  </div> <!-- cierre correcto de lenguajes-grid -->
+</section>
+
+    </main>
+     <!-- Tips Iniciales -->
+      <section class="seccion interaccion" id="tips">
+        <h2>💡 Tips Iniciales</h2>
+        <button onclick="mostrarTipAleatorio()" class="btn sec">Ver un Tip</button>
+        <div id="contenedor-tip" class="tips oculto"></div>
+      </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contacto">
+      <p>© 2025 Code Zone. Todos los derechos reservados.</p>
+      <p>Contacto: <a href="mailto:codezone@aprende.dev">codezone@aprende.dev</a></p>
+      <div class="redes">
+        <a href="#">Facebook</a> · 
+        <a href="#">Instagram</a> · 
+        <a href="#">GitHub</a>
+      </div>
+    </footer>
+  </div>
+  <h1></h1>
+
+  <!-- SCRIPTS -->
+  <script>
+    const tips = [
+      "✨ Usa etiquetas como <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code> y <code>&lt;a&gt;</code> para comenzar.",
+      "💻 No te preocupes si algo no sale bien a la primera. ¡Equivocarse es parte del aprendizaje!",
+      "🔍 Siempre indenta tu código y usa comentarios para mantenerlo claro.",
+      "📦 HTML estructura, CSS decora, y JavaScript le da vida.",
+      "🧠 Aprende copiando, luego practicando, y finalmente creando algo tuyo.",
+      "🎯 Un buen desarrollador se equivoca mil veces... ¡pero nunca se rinde!"
+    ];
+
+    function mostrarTipAleatorio() {
+      const contenedor = document.getElementById("contenedor-tip");
+      const random = Math.floor(Math.random() * tips.length);
+      contenedor.innerHTML = tips[random];
+      contenedor.classList.remove("oculto");
+    }
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+</body>
+</html>

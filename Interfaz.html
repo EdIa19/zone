@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Zone - Aprende a Programar</title>
+  
+</head>
+<style>
+ 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #579aff;
+    color: #c9d1d9;
+    overflow-x: hidden;
+}
+
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    animation: fadeIn 3s ease-in-out;
+}
+
+
+.btn-start {
+    background: #4e2386;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 4s ease-in-out;
+}
+
+.btn-start:hover {
+    background: #4128b3;
+    transform: scale(1.1);
+}
+
+
+</style>
+<body>
+
+
+  
+    <video autoplay loop muted playsinline class="background-video">
+        <source src="CODEZONE.mp4" type="video/mp4">
+        Tu navegador no soporta videos en HTML5.
+    </video>
+
+    
+    <div class="container">
+        <h1>¿Estás listo para aprender a programar?</h1>
+        <p class="subtitle">Únete a <strong>Code Zone</strong> y domina los lenguajes más demandados de la industria.</p>
+        <button class="btn-start" onclick="redirectPage()">¡Comenzar Ahora!</button>
+    </div>
+
+   
+    <script>
+        
+  
+  function redirectPage() {
+      window.location.href = "index.html"; 
+  }
+    </script>
+</body>
+</html>

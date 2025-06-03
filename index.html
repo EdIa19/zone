@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Zone - Aprende Programación Interactiva</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <h1 class="logo">🌐 Code Zone</h1>
+    <nav class="nav" id="navMenu">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">🏠 Inicio</a></li>
+        <li><a href="1.html">📘 Niveles</a></li>
+        <li><a href="#tips">💡 Tips</a></li>
+        <li><a href="#certificaciones">📜 Certificaciones</a></li>
+        <li><a href="#comunidad">🤝 Comunidad</a></li>
+        <li><a href="#contacto">✉️ Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" id="toggleMenu">☰</div>
+    <button class="btn primary">🔐 Iniciar sesión</button>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="page-container">
+    <header class="hero" id="inicio">
+      <h1>🚀 Bienvenido a <span class="resaltado">Code Zone</span></h1>
+      <p>Aprende desarrollo web de forma práctica, divertida e interactiva.</p>
+      <a href="1.html" class="btn">Comenzar Ahora</a>
+    </header>
+
+    <main class="info">
+      <!-- ¿Qué es Code Zone? -->
+      <section class="seccion">
+        <h2>🌐 ¿Qué es <span class="resaltado">Code Zone</span>?</h2>
+        <p>
+          Code Zone es una plataforma donde aprenderás <strong>programación web</strong> paso a paso.
+          Cada nivel te enseña conceptos esenciales y te permite escribir código que se ejecuta en vivo.
+        </p>
+      </section>
+
+      <!-- ¿Qué puedes aprender? -->
+      <section class="seccion">
+        <h2>📚 ¿Qué puedes aprender aquí?</h2>
+        <ul class="lista">
+          <li>✔️ Fundamentos de HTML, CSS y JavaScript</li>
+          <li>✔️ Creación de sitios web desde cero</li>
+          <li>✔️ Buenas prácticas de desarrollo</li>
+          <li>✔️ Desafíos con evaluación automática</li>
+        </ul>
+      </section>
+
+      <!-- ¿Cómo funciona? -->
+      <section class="seccion">
+        <h2>🎯 ¿Cómo funciona?</h2>
+        <p>
+          Al entrar en cada nivel, verás una instrucción clara, un editor para escribir tu código  
+          y una vista previa en tiempo real. Al completar correctamente, <strong>desbloquearás el siguiente nivel</strong>.
+        </p>
+      </section>
+
+      <!-- Tips -->
+      <section class="seccion interaccion" id="tips">
+        <h2>💡 Tips Iniciales</h2>
+        <button onclick="mostrarTipAleatorio()" class="btn sec">Ver un Tip</button>
+        <div id="contenedor-tip" class="tips oculto"></div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contacto">
+      <p>© 2025 Code Zone. Todos los derechos reservados.</p>
+      <p>Contacto: <a href="mailto:codezone@aprende.dev">codezone@aprende.dev</a></p>
+      <div class="redes">
+        <a href="#">Facebook</a> · 
+        <a href="#">Instagram</a> · 
+        <a href="#">GitHub</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    const tips = [
+      "✨ Usa etiquetas como <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code> y <code>&lt;a&gt;</code> para comenzar.",
+      "💻 No te preocupes si algo no sale bien a la primera. ¡Equivocarse es parte del aprendizaje!",
+      "🔍 Siempre indenta tu código y usa comentarios para mantenerlo claro.",
+      "📦 HTML estructura, CSS decora, y JavaScript le da vida.",
+      "🧠 Aprende copiando, luego practicando, y finalmente creando algo tuyo.",
+      "🎯 Un buen desarrollador se equivoca mil veces... ¡pero nunca se rinde!"
+    ];
+
+    function mostrarTipAleatorio() {
+      const contenedor = document.getElementById("contenedor-tip");
+      const random = Math.floor(Math.random() * tips.length);
+      contenedor.innerHTML = tips[random];
+      contenedor.classList.remove("oculto");
+    }
+
+    // Menú móvil
+    const toggle = document.getElementById("toggleMenu");
+    const navMenu = document.getElementById("navMenu");
+
+    toggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+    // Resaltado dinámico
+    const enlaces = document.querySelectorAll(".nav-links a");
+    enlaces.forEach(link => {
+      link.addEventListener("click", () => {
+        enlaces.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+      });
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>
